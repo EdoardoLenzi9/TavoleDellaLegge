@@ -1,0 +1,29 @@
+{
+  "name": "le_sacre_tavole",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "font-awesome": "^4.7.0",
+    "fs": "0.0.1-security",
+    "jquery": "^3.4.1",
+    "mongodb": "^2.2.36",
+    "mysql": "^2.0.0-alpha8",
+    "orm": "^5.0.4",
+    "request": "^2.88.0",
+    "vue": "^2.6.10"
+  }
+}

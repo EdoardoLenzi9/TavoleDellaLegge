@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="author" content="Edoardo Lenzi">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="/common/style.css">
+    <link rel="stylesheet" href="/login/login.css">
+</head>
+
+<body>
+    <div class="container-fluid white full-width-expansion">
+        
+        <div id="title" class="row center">
+            <h1 class="huge">LE SACRE TAVOLE DELLA LEGGE</h1>
+        </div>
+        <div class="row small">
+            <div class="col-md-6">
+                <div id="massimo">
+                    <h1 class="center large">Massimo - {{ score }}</h1>
+                    <br/>
+                    <h1 v-for="rule in rules" class="medium">
+                        {{ rule.id }} {{ rule.description }} [{{ rule.bonus }}, {{ rule.malus }}]
+                    </h1>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="mariavittoria">
+                    <h1 class="center large">Mariavittoria - {{ score }}</h1>
+                    <br/>
+                    <h1 v-for="rule in rules" class="medium">
+                        {{ rule.id }} {{ rule.description }} [{{ rule.bonus }}, {{ rule.malus }}]
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <button id="add" type="button" class="btn btn-primary medium"  data-toggle="modal" data-target="#exampleModal">  +  </button>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Aggiungi punti/regole</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body center">
+                <label for="exampleInputEmail1">Aggiungi regola</label>
+                <br/>
+                <input type="text" class="form-control" id="description" aria-describedby="Descrizione Regola" placeholder="Descrizione Regola">
+                <br/>
+                <input type="number" class="form-control" id="bonus" placeholder="Bonus">
+                <br/>
+                <input type="number" class="form-control" id="malus" placeholder="Malus">
+                <br/>
+                <div class="btn-group dropdown">
+                    <button type="button" id="target1" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Massimo
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" onclick="$('#target1').html('Massimo');">Massimo</a>
+                        <a class="dropdown-item" onclick="$('#target1').html('Mariavittoria');">Mariavittoria</a>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="addRule()">Aggiungi regola</button>
+                <div></div>
+                <br/>
+                <label for="exampleInputEmail1">Aggiungi punti</label>
+                <br/>
+                <input type="number" class="form-control" id="points" placeholder="Punti">
+                <br/>
+                <div class="btn-group dropdown">
+                        <button type="button" id="target2" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Massimo
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" onclick="$('#target2').html('Massimo');">Massimo</a>
+                            <a class="dropdown-item" onclick="$('#target2').html('Mariavittoria');">Mariavittoria</a>
+                        </div>
+                    </div>
+                <button type="submit" class="btn btn-primary" onclick="addPoints()">Aggiungi punti</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+
+<script src="/vue/dist/vue.min.js"></script>
+<script src="/jquery/dist/jquery.min.js"></script>
+<script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="/common/utils.js"></script>
+<script src="/common/httpClient.js"></script>
+<script src="/login/login.js"></script>
+
+</html>
